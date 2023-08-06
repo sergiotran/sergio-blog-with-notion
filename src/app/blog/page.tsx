@@ -1,6 +1,6 @@
 import Article from '@/common/components/article';
 import Heading from '@/common/components/heading';
-import { fetchNotionDatabase } from '../lib/notion';
+import { fetchNotionDatabase } from '@/lib/notion';
 import { Article as Post } from '@/common/types/article';
 
 const BlogPage = async () => {
@@ -8,7 +8,7 @@ const BlogPage = async () => {
 
   return (
     <section className='relative'>
-      <section className='flex flex-col py-5 text-center'>
+      <section className='flex flex-col mb-10'>
         <Heading level={2} as='h2'>Blog</Heading>
         <p className='text-slate-600'>Nơi mình chia sẻ những tâm sự về cuộc sống, IT và một số chủ đề khác</p>
       </section>

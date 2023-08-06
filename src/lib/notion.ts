@@ -1,5 +1,4 @@
 import { Client } from '@notionhq/client'
-import { Article } from '@/common/types/article';
 
 export const notion = new Client({
   auth: process.env.NOTION_TOKEN
@@ -20,8 +19,8 @@ export const fetchNotionDatabase = async (database_id: string = process.env.NOTI
     const databaseResponse = await notion.databases.query({
       database_id,
       filter: {
-        type: "status",
-        property: "Status",
+        type: 'status',
+        property: 'Status',
         status: {
           equals: 'Published'
         }
@@ -29,7 +28,7 @@ export const fetchNotionDatabase = async (database_id: string = process.env.NOTI
     })
     return databaseResponse.results;
   } catch (error) {
-    console.error("Cannot Fetch Notion Database, detail:", error);
+    console.error('Cannot Fetch Notion Database, detail:', error);
     return [];
   }
 }
